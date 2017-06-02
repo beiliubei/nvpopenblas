@@ -26,9 +26,10 @@ public class MainActivity extends AppCompatActivity {
 
         // Example of a call to a native method
         tv = (TextView) findViewById(R.id.sample_text);
-        tv.setMovementMethod(new ScrollingMovementMethod());
+//        tv.setMovementMethod(new ScrollingMovementMethod());
 
         final EditText et = (EditText) findViewById(R.id.to);
+        final EditText threadNumEt = (EditText) findViewById(R.id.threadnum);
 
         findViewById(R.id.start).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                     task = new AsyncTask<Integer, Void, Void>() {
                         @Override
                         protected Void doInBackground(Integer... integers) {
-                            stringFromJNI(integers[0]);
+                            stringFromJNI(integers[0], integers[1]);
                             return null;
                         }
 
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                             task = null;
                         }
                     };
-                    task.execute(Integer.parseInt(et.getText().toString()));
+                    task.execute(Integer.parseInt(et.getText().toString()), Integer.parseInt(threadNumEt.getText().toString()));
                 }
             }
         });
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
      * A native method that is implemented by the 'native-lib' native library,
      * which is packaged with this application.
      */
-    public native void stringFromJNI(int to);
+    public native void stringFromJNI(int to, int num);
 
     public static void callback(final String value) {
         context.runOnUiThread(new Runnable() {
