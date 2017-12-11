@@ -149,8 +149,8 @@ void nvp_openblas_gemm_test(int to, nvp_callback *cb) {
     int l;
     char *p;
 
-    int from = 1;
-    int step = 1;
+    int from = 16;
+    int step = 2;
 
     struct timeval start, stop;
     double time1, timeg;
@@ -213,7 +213,7 @@ void nvp_openblas_gemm_test(int to, nvp_callback *cb) {
     cb(ss);
     free(ss);
 
-    for (m = from; m <= to; m += step) {
+    for (m = from; m <= to; m *= step) {
 
         timeg = 0;
 

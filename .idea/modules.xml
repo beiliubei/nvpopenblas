@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/NVPOpenblas.iml" filepath="$PROJECT_DIR$/NVPOpenblas.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nvpopenblas.iml" filepath="$PROJECT_DIR$/nvpopenblas.iml" />
     </modules>
   </component>
 </project>

@@ -40,7 +40,7 @@ Java_nextvpu_com_nvpopenblas_MainActivity_stringFromJNI(
     int numProc = openblas_get_num_procs();
     int parallel = openblas_get_parallel();
     char * ss = (char *)malloc(1024);
-    sprintf(ss, "numthread: %d numProc: %d parallel: %d", numthread, numProc, parallel);
+    sprintf(ss, "numthread: %d numProc: %d parallel: %d\n", numthread, numProc, parallel);
     callback(ss);
     callback("\n");
     free(ss);
